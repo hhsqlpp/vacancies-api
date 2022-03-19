@@ -7,10 +7,12 @@ const PORT = process.env.PORT;
 const DB_URL = process.env.DB_URL;
 const vacancy = require('./routes/vacancy');
 const auth = require('./routes/auth');
+const event = require('./routes/event');
 
 app.use(express.json());
 app.use('/vacancies', vacancy);
 app.use('/user', auth);
+app.use('/events', event);
 
 const start = async () => {
     try {
